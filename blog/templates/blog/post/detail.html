@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load blog_tags %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -13,7 +14,14 @@
       Share this post
     </a>
   </p>
-
+  <h2>Similar posts</h2>
+  {% for post in similar_posts %}
+    <p>
+      <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </p>
+  {% empty %}
+    There are no similar posts yet.
+  {% endfor %}
   {% with comments.count as total_comments %}
     <h2>
       {{ total_comments }} comment{{ total_comments|pluralize }}
@@ -25,7 +33,7 @@
         Comment {{ forloop.counter }} by {{ comment.name }}
         {{ comment.created }}
       </p>
-      {{ comment.body|linebreaks }}
+      {{ comment.body|markdown }}
     </div>
   {% empty %}
     <p>There are no comments yet.</p>
