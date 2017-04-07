@@ -23,6 +23,11 @@ urlpatterns = [
 
     #edit profile
     url(r'^edit/$', views.edit, name='edit'),
+
+    #users
+    url(r'^users/follow/$', views.user_follow, name='user_follow'),
+    url(r'^users/$', views.user_list, name='user_list'),
+    url(r'^users/(?P<username>[-\w]+)/$', views.user_detail, name='user_detail'),
     
     #dashboard
     url(r'^$', views.dashboard, name='dashboard'),
