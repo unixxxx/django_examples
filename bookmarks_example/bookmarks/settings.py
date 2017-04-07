@@ -25,7 +25,7 @@ SECRET_KEY = '+nzqj_#k1@mj$!197x^xg1_f4e+a+=(iw6d-os(1$hu-n#%79u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'account'
+    'social_django',
+
+    'account',
+    'images'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'
@@ -64,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -123,6 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'account', 'static'),
+    os.path.join(BASE_DIR, 'images', 'static'),
 ]
 
 MEDIA_URL = '/media/'
@@ -137,6 +144,20 @@ LOGOUT_URL = reverse_lazy('logout')
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 )
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1440986725974406'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f6df7058cf186acce66c92e3a128daf8'  # App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_TWITTER_KEY = '9OR7cwndwJ4SxXImtmDJAy4j3'
+SOCIAL_AUTH_TWITTER_SECRET = '3IMinxqWAqg8kHIQuolUtuWadj4hUvd91LqVWbPs7zFBVehjWU'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '270540132413-o3mb3leas85j79ac4cin73g12r3ds332.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '-RncglsxqulEM8djnrH36-1y' # Google Consumer Secret
