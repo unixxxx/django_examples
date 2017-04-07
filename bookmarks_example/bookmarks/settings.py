@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'social_django',
 
     'account',
+    'actions',
     'images'
 ]
 
