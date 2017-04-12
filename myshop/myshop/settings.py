@@ -25,7 +25,7 @@ SECRET_KEY = 'fc#atf((wu(+ofz6v^ol$m9=a$1x%ro01zs53lh&yq6*xayo03'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,12 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_celery_beat',
-    'django_celery_results',
+
+    'paypal.standard.ipn',
 
     'shop',
     'cart',
-    'orders'
+    'orders',
+    'payment'
 ]
 
 MIDDLEWARE = [
@@ -136,10 +137,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CART_SESSION_ID = 'cart'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
-# CELERY_BROKER_URL = 'redis://localhost:6379'
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
+
+
+PAYPAL_RECEIVER_EMAIL = 'sh.jashiashvili-facilitator@gmail.com'
+PAYPAL_TEST = True
