@@ -1,5 +1,6 @@
 from django.db import models
 from shop.models import Product
+from django.core.urlresolvers import reverse
 
 
 class Order(models.Model):
@@ -15,6 +16,10 @@ class Order(models.Model):
 
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
+
+    def order_detail(self):
+        return '<a href="{}">View</a>'.format(reverse('orders:admin_order_detail', args=[self.id]))
+    order_detail.allow_tags=True
 
     class Meta:
         ordering = ('-created',)
