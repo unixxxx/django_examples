@@ -148,6 +148,10 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
+
 
 PAYPAL_RECEIVER_EMAIL = 'sh.jashiashvili-facilitator@gmail.com'
 PAYPAL_TEST = True
