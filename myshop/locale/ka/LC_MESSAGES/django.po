@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-22 23:03+0400\n"
+"PO-Revision-Date: 2017-04-22 18:36+0000\n"
+"Last-Translator: b'  <>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: cart/forms.py:7
+msgid "Quantity"
+msgstr "რაოდენობა"
+
+#: coupons/forms.py:5
+msgid "Coupon"
+msgstr "პრომო კოდი"
+
+#: myshop/settings.py:157
+msgid "English"
+msgstr "ინგლისური"
+
+#: myshop/settings.py:158
+msgid "Georgian"
+msgstr "ქართული"
+
+#: shop/templates/shop/base.html:8 shop/templates/shop/base.html:14
+msgid "My shop"
+msgstr "ჩემი მაღაზია"
+
+#: shop/templates/shop/base.html:21
+msgid "Language"
+msgstr ""
+
+#: shop/templates/shop/base.html:37
+msgid "Your cart"
+msgstr "ბარათი"
+
+#: shop/templates/shop/base.html:39
+#, python-format
+msgid ""
+"\n"
+"              %(total_items)s item%(total_items_plural)s,\n"
+"              $%(total_price)s\n"
+"            "
+msgstr ""
+"\n"
+"              %(total_items)s ნივთი%(total_items_plural)s,\n"
+"              $%(total_price)s\n"
+"            "
+
+#: shop/templates/shop/base.html:45
+msgid "Your cart is empty."
+msgstr "ბარათი ცარიელია"
+
+#: shop/templates/shop/product/detail.html:18
+msgid "Add to cart"
+msgstr "დაამატე ბარათზე"
+
+#: shop/templates/shop/product/list.html:14
+msgid "All"
+msgstr "ყველა"

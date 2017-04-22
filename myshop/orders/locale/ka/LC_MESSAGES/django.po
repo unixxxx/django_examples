@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-22 23:03+0400\n"
+"PO-Revision-Date: 2017-04-22 18:05+0000\n"
+"Last-Translator: b'  <>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: orders/models.py:13
+msgid "first name"
+msgstr "სახელი"
+
+#: orders/models.py:14
+msgid "last name"
+msgstr "გვარი"
+
+#: orders/models.py:15
+msgid "e-mail"
+msgstr "ელ.ფოსტა"
+
+#: orders/models.py:16
+msgid "address"
+msgstr "მისამართი"
+
+#: orders/models.py:17
+msgid "postal code"
+msgstr "საფოსტო კოდი"
+
+#: orders/models.py:18
+msgid "city"
+msgstr "ქალაქი"
+
+#: orders/templates/orders/order/create.html:5
+#: orders/templates/orders/order/create.html:9
+msgid "Checkout"
+msgstr "შეკვეთა"
+
+#: orders/templates/orders/order/create.html:12
+msgid "Your order"
+msgstr "შენი შეკვეთა"
+
+#: orders/templates/orders/order/create.html:22
+#, python-format
+msgid ""
+"\n"
+"            \"%(code)s\" (%(discount)s%% off)\n"
+"          "
+msgstr ""
+"\n"
+"            \"%(code)s\" (%(discount)s%% ფასდაკლება)\n"
+"          "
+
+#: orders/templates/orders/order/create.html:29
+msgid "Total"
+msgstr "სულ"
+
+#: orders/templates/orders/order/create.html:34
+msgid "Place order"
+msgstr "შეუკვეთე"

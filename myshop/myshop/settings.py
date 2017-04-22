@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,16 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'paypal.standard.ipn',
+    'rosetta',
+    'parler',
 
     'shop',
     'cart',
     'orders',
-    'payment'
+    'payment',
+    'coupons'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -146,3 +151,26 @@ CELERY_TIMEZONE = TIME_ZONE
 
 PAYPAL_RECEIVER_EMAIL = 'sh.jashiashvili-facilitator@gmail.com'
 PAYPAL_TEST = True
+
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('ka', _('Georgian')),
+)
+
+LANGUAGE_CODE = 'en'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',},
+        {'code': 'ka',},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
