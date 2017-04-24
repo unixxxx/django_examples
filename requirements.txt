@@ -19,6 +19,7 @@ django-parler==1.7
 django-paypal==0.3.6
 django-rosetta==0.7.13
 django-taggit==0.22.0
+djangorestframework==3.6.2
 flower==0.9.1
 html5lib==0.999999999
 isort==4.2.5
